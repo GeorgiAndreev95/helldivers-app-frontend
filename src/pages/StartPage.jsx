@@ -15,10 +15,10 @@ function StartPage() {
             ></div>
 
             {!enter && (
-                <div className="relative z-10 h-full w-full flex items-end justify-center pb-[20%]">
+                <div className="relative z-10 h-full w-full flex items-end justify-center pb-[8%]">
                     <button
                         onClick={() => setEnter(true)}
-                        className="px-8 py-4 text-xl bg-gray-900 bg-opacity-70 text-white rounded-lg hover:bg-opacity-90 transition transform hover:scale-105"
+                        className="px-8 py-4 text-xl bg-gray-900/70 border-2 border-white rounded-lg text-white hover:bg-gray-900/90 transition transform hover:scale-105"
                     >
                         Enter Page
                     </button>
@@ -27,9 +27,11 @@ function StartPage() {
 
             {/* New Page or Content */}
             {enter && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center text-white text-3xl drop-shadow-lg">
-                    <Factions />
-                </div>
+                <>
+                    <div className="absolute inset-0 z-10 bg-gray-900/70 m-5 p-5 flex items-center justify-center text-white text-xl drop-shadow-lg rounded-xl">
+                        <Factions />
+                    </div>
+                </>
             )}
         </div>
     );

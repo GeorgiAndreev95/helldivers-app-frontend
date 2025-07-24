@@ -12,7 +12,7 @@ function Faction() {
                 {factions.map((faction) => (
                     <div key={faction.id}>
                         <li>{faction.name}</li>
-                        <p>{factions[0].description}</p>
+                        <p>{faction.description}</p>
                     </div>
                 ))}
             </ul>
