@@ -1,21 +1,27 @@
 .header {
     display: flex;
     align-items: center;
-    gap: 50px;
     margin: 20px;
-    background-color: rgb(11, 16, 26);
+    background-color: rgb(11, 16, 26, 0.8);
     border-radius: 0.5rem 0.5rem 0 0;
     position: relative;
     z-index: 20;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
 .logo {
     width: 12rem;
 }
 
+.logo:hover {
+    scale: 1.1;
+    transition: 0.5s;
+}
+
 .headerOptions {
     display: flex;
-    width: 87%;
+    width: 90%;
+    margin: 20px;
     justify-content: space-between;
 }
 
@@ -25,7 +31,26 @@
     gap: 15px;
 }
 
+.categories a {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 a:hover {
     font-weight: bold;
-    color: #ffcc00;
+    color: var(--main-yellow);
+}
+
+a:active {
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

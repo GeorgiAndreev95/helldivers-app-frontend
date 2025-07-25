@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-yellow: #ffcc00;
+}
+
 body,
 h1,
 h2,
@@ -66,8 +70,8 @@ select {
 }
 
 :focus {
-    outline: 2px solid #0070f3;
-    outline-offset: 2px;
+    outline: none;
+    outline-offset: 1px;
 }
 :focus:not(:focus-visible) {
     outline: none;
@@ -87,5 +91,14 @@ a {
 
 .active {
     font-weight: bold;
-    color: #ffcc00;
+    color: var(--main-yellow);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

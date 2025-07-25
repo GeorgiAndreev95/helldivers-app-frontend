@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 import { setToken } from "../../slices/authSlice";
 import { authentication } from "../../services/authenticationService";
+import classes from "./Login.module.css";
 
 const Login = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,6 +17,7 @@ const Login = () => {
         const token = await authentication(email, password);
         dispatch(setToken(token));
         localStorage.setItem("userToken", token);
+        navigate("/home");
     };
 
     const onEmailChangeHandler = (event) => {
@@ -23,26 +27,39 @@ const Login = () => {
         setPassword(event.target.value);
     };
 
+    useEffect(() => {
+        const token = localStorage.getItem("userToken");
+        if (token) {
+            navigate("/home");
+        }
+    }, [navigate]);
+
     return (
-        <form onSubmit={onSubmitHandler}>
-            <input
-                name="email"
-                type="email"
-                required
-                placeholder="Email"
-                value={email}
-                onChange={onEmailChangeHandler}
-            />
-            <input
-                name="password"
-                type="password"
-                required
-                placeholder="Password"
-                value={password}
-                onChange={onPasswordChangeHandler}
-            />
-            <button type="submit">Login</button>
-        </form>
+        <div className={classes.loginContainer}>
+            <form className={classes.loginForm} onSubmit={onSubmitHandler}>
+                <input
+                    className={classes.loginEmail}
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Email"
+                    value={email}
+                    onChange={onEmailChangeHandler}
+                />
+                <input
+                    className={classes.loginPassword}
+                    name="password"
+                    type="password"
+                    required
+                    placeholder="Password"
+                    value={password}
+                    onChange={onPasswordChangeHandler}
+                />
+                <button className={classes.loginButton} type="submit">
+                    Login
+                </button>
+            </form>
+        </div>
     );
 };
 

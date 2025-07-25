@@ -1,10 +1,21 @@
-import { NavLink } from "react-router";
-import { useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
 
 import classes from "./Header.module.css";
 import headerLogo from "../../assets/header-logo.png";
+import { setToken } from "../../slices/authSlice";
 
 function Header() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const logoutHandler = () => {
+        dispatch(setToken(null));
+        localStorage.removeItem("userToken");
+
+        navigate("/login");
+    };
+
     const token = useSelector((state) => state.auth.token);
     return (
         <header className={classes.header}>
@@ -24,7 +35,8 @@ function Header() {
                     </nav>
                 ) : (
                     <nav className={classes.categories}>
-                        <NavLink>Log out</NavLink>
+                        <NavLink to="/admin">Admin Page</NavLink>
+                        <a onClick={logoutHandler}>Log out</a>
                     </nav>
                 )}
             </div>

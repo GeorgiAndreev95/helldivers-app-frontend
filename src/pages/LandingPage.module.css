@@ -12,7 +12,7 @@
 .button {
     padding: 1rem 2rem;
     font-size: 1.25rem;
-    background-color: rgba(17, 24, 39, 0.7); /* gray-900/70 */
+    background-color: rgba(17, 24, 39, 0.7);
     border: 2px solid white;
     border-radius: 0.5rem;
     color: white;
@@ -22,7 +22,7 @@
 }
 
 .button:hover {
-    background-color: rgba(17, 24, 39, 0.9); /* gray-900/90 */
+    background-color: rgba(17, 24, 39, 0.9);
     transform: scale(1.05);
 }
 
@@ -32,4 +32,15 @@
     align-items: center;
     color: white;
     font-size: 1.25rem;
+    margin: 20px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
