@@ -1,0 +1,35 @@
+.overlay {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 8%;
+}
+
+.button {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    background-color: rgba(17, 24, 39, 0.7); /* gray-900/70 */
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(17, 24, 39, 0.9); /* gray-900/90 */
+    transform: scale(1.05);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.25rem;
+}
