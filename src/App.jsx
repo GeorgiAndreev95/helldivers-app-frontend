@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Login from "./components/Login/Login";
 import AdminPage from "./components/Admin/AdminPage";
 import AddFaction from "./components/Admin/AddFaction";
+import ProtectedRoutes from "./components/Admin/ProtectedRoutes";
+import Factions from "./pages/Factions";
 
 function App() {
     return (
@@ -13,9 +15,12 @@ function App() {
             <Route element={<Layout />}>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="home" element={<Home />} />
+                <Route path="factions" element={<Factions />} />
                 <Route path="login" element={<Login />} />
-                <Route path="admin" element={<AdminPage />} />
-                <Route path="admin/add-faction" element={<AddFaction />} />
+                <Route element={<ProtectedRoutes />}>
+                    <Route path="admin" element={<AdminPage />} />
+                    <Route path="admin/add-faction" element={<AddFaction />} />
+                </Route>
             </Route>
         </Routes>
     );

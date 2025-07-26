@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 import { setToken } from "../../slices/authSlice";
@@ -11,6 +11,8 @@ const Login = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const token = useSelector((state) => state.auth.token);
+
     const onSubmitHandler = async (e) => {
         e.preventDefault();
 
@@ -28,11 +30,10 @@ const Login = () => {
     };
 
     useEffect(() => {
-        const token = localStorage.getItem("userToken");
         if (token) {
             navigate("/home");
         }
-    }, [navigate]);
+    }, [navigate, token]);
 
     return (
         <div className={classes.loginContainer}>
@@ -45,6 +46,7 @@ const Login = () => {
                     placeholder="Email"
                     value={email}
                     onChange={onEmailChangeHandler}
+                    autoComplete="username"
                 />
                 <input
                     className={classes.loginPassword}
@@ -54,6 +56,7 @@ const Login = () => {
                     placeholder="Password"
                     value={password}
                     onChange={onPasswordChangeHandler}
+                    autoComplete="current-password"
                 />
                 <button className={classes.loginButton} type="submit">
                     Login

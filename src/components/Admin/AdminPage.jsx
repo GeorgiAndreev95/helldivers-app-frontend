@@ -1,19 +1,8 @@
-import { useEffect } from "react";
 import { Link } from "react-router";
-import { useNavigate } from "react-router";
 
 import classes from "./AdminPage.module.css";
 
 const AdminPage = () => {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        const token = localStorage.getItem("userToken");
-        if (!token) {
-            navigate("/home");
-        }
-    }, [navigate]);
-
     return (
         <div className={classes.adminPageWrapper}>
             <div className={classes.adminTitle}>

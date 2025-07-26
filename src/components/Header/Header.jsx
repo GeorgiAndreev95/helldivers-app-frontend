@@ -24,7 +24,7 @@ function Header() {
             </NavLink>
             <div className={classes.headerOptions}>
                 <nav className={classes.categories}>
-                    <NavLink to="/home">Factions</NavLink>
+                    <NavLink to="/factions">Factions</NavLink>
                     <NavLink>Weapons</NavLink>
                     <NavLink>Stratagems</NavLink>
                 </nav>

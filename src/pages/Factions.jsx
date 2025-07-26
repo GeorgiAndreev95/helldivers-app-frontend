@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Faction from "../components/Faction";
+import Faction from "../components/Factions/Faction";
 import { getFactions } from "../services/factionService";
 import { setFactions } from "../slices/factionsSlice";
 

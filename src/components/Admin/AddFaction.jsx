@@ -1,31 +1,49 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { createFaction } from "../../services/factionService";
 
 import classes from "./AddFaction.module.css";
 
 const AddFaction = () => {
     const navigate = useNavigate();
+    const [factionName, setFactionName] = useState("");
+    const [description, setDescription] = useState("");
+    const [file, setFile] = useState(null);
     const [fileName, setFileName] = useState("No file chosen");
+    const token = useSelector((state) => state.auth.token);
 
     const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setFileName(file.name);
+        const selectedFile = e.target.files[0];
+        if (selectedFile) {
+            setFileName(selectedFile.name);
+            setFile(selectedFile);
         } else {
             setFileName("No file chosen");
+            setFile(null);
         }
     };
 
-    const onSubmitHandler = (e) => {
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
+
+        if (token && file) {
+            try {
+                await createFaction(factionName, description, file, token);
+                navigate("/admin");
+            } catch (error) {
+                console.error("Error creating faction:", error);
+            }
+        }
     };
 
-    useEffect(() => {
-        const token = localStorage.getItem("userToken");
-        if (!token) {
-            navigate("/home");
-        }
-    }, [navigate]);
+    const onNameChangeHandler = (event) => {
+        setFactionName(event.target.value);
+    };
+
+    const onDescriptionChangeHandler = (event) => {
+        setDescription(event.target.value);
+    };
 
     return (
         <div className={classes.addFactionContainer}>
@@ -37,6 +55,8 @@ const AddFaction = () => {
                     type="text"
                     required
                     placeholder="Faction Name"
+                    value={factionName}
+                    onChange={onNameChangeHandler}
                 />
                 <input
                     className={classes.hiddenFileUpload}
@@ -60,6 +80,8 @@ const AddFaction = () => {
                     type="text"
                     required
                     placeholder="Description"
+                    value={description}
+                    onChange={onDescriptionChangeHandler}
                 />
                 <button className={classes.submitButton} type="submit">
                     Submit

@@ -6,7 +6,7 @@ function Home() {
     return (
         <>
             <div className={classes.content}>
-                <Factions />
+                <h1>Work in progress...</h1>
             </div>
         </>
     );
