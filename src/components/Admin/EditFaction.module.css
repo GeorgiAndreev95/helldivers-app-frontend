@@ -1,0 +1,137 @@
+.addFactionContainer {
+    margin: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.addFactionContainer h1 {
+    color: var(--main-yellow);
+    margin-bottom: 50px;
+}
+
+.addFactionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.factionName,
+.factionDescription {
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.factionDescription {
+    height: 120px;
+}
+
+.hiddenFileUpload {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.customFileButton {
+    padding: 5px 15px;
+    height: 40px;
+    width: 350px;
+    align-content: center;
+    background: white;
+    color: gray;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.fileName {
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.submitButton {
+    padding: 8px 20px;
+    width: 120px;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    background: rgba(17, 24, 39, 0.7);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    color: rgba(17, 24, 39, 0.9);
+    background: white;
+    border: 2px solid var(--main-yellow);
+    box-shadow: 0px 0px 3px 3px #ffcc00af;
+}
+
+.factionName:hover,
+.customFileButton:hover,
+.factionDescription:hover,
+.factionName:focus,
+.customFileButton:focus,
+.factionDescription:focus {
+    background-color: rgb(221, 221, 221);
+}
+
+.fileName {
+    color: black;
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+dialog {
+    border-radius: 10px;
+}
+
+dialog p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+dialog div {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+dialog button {
+    margin-top: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+dialog button:first-of-type:hover {
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+}
+
+dialog button:last-of-type:hover {
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

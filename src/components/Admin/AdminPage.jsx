@@ -11,11 +11,11 @@ const AdminPage = () => {
             </div>
             <nav className={classes.adminOptions}>
                 <Link to="add-faction">Add Faction</Link>
-                <Link>View/Edit Factions</Link>
+                <Link to="factions">View/Edit/Delete Factions</Link>
             </nav>
             <nav className={classes.adminOptions}>
                 <Link>Add Enemy Unit</Link>
-                <Link>View/Edit Enemy Units</Link>
+                <Link>View/Edit/Delete Enemy Units</Link>
             </nav>
         </div>
     );

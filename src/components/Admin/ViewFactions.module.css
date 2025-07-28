@@ -1,0 +1,58 @@
+.viewFactionsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    color: white;
+    font-size: 1.25rem;
+    margin: 0 40px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.viewFactionsClassTitle {
+    text-align: center;
+    font-size: 40px;
+}
+
+.viewFactionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.viewFactionImgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.viewFactionName {
+    width: 120px;
+    text-align: center;
+}
+
+.viewFactionImg {
+    width: 125px;
+    height: auto;
+}
+
+.viewFactionsButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.viewFactionsButtons a {
+    width: 220px;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    background: gray;
+    border-radius: 8px;
+}
+
+.viewFactionsButtons a:last-of-type {
+    margin-bottom: 20px;
+}
