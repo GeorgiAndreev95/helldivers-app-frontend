@@ -22,18 +22,14 @@ export const getFaction = async (id) => {
     }
 };
 
-export const createFaction = async (name, description, image, token) => {
+export const createFaction = async (name, description, image) => {
     try {
         const formData = new FormData();
         formData.append("name", name);
         formData.append("description", description);
         formData.append("image", image);
 
-        const { data } = await axiosInstance.post("/factions", formData, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const { data } = await axiosInstance.post("/factions", formData);
 
         console.log(data);
         return data;
@@ -43,7 +39,7 @@ export const createFaction = async (name, description, image, token) => {
     }
 };
 
-export const editFaction = async (id, name, description, image, token) => {
+export const editFaction = async (id, name, description, image) => {
     try {
         const formData = new FormData();
         formData.append("name", name);
@@ -52,11 +48,7 @@ export const editFaction = async (id, name, description, image, token) => {
             formData.append("image", image);
         }
 
-        const { data } = await axiosInstance.put(`/factions/${id}`, formData, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const { data } = await axiosInstance.put(`/factions/${id}`, formData);
 
         return data;
     } catch (error) {
@@ -65,13 +57,9 @@ export const editFaction = async (id, name, description, image, token) => {
     }
 };
 
-export const deleteFaction = async (id, token) => {
+export const deleteFaction = async (id) => {
     try {
-        const response = await axiosInstance.delete(`/factions/${id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const response = await axiosInstance.delete(`/factions/${id}`);
 
         console.log(response.data.message, response.data.faction);
     } catch (error) {

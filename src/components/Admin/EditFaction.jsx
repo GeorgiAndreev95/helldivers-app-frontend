@@ -54,7 +54,7 @@ const EditFaction = () => {
 
         if (token) {
             try {
-                await editFaction(id, factionName, description, file, token);
+                await editFaction(id, factionName, description, file);
                 dispatch(fetchFactions());
                 navigate("/admin/factions");
             } catch (error) {
@@ -73,7 +73,7 @@ const EditFaction = () => {
     const confirmDelete = async () => {
         if (token) {
             try {
-                await deleteFaction(id, token);
+                await deleteFaction(id);
                 dispatch(fetchFactions());
                 navigate("/admin/factions");
             } catch (error) {
@@ -123,16 +123,18 @@ const EditFaction = () => {
                     value={description}
                     onChange={onDescriptionChangeHandler}
                 />
-                <button className={classes.submitButton} type="submit">
-                    Submit Changes
-                </button>
-                <button
-                    className={classes.submitButton}
-                    type="button"
-                    onClick={handleDeleteClick}
-                >
-                    Delete Faction
-                </button>
+                <div className={classes.buttonsContainer}>
+                    <button className={classes.submitButton} type="submit">
+                        Submit Changes
+                    </button>
+                    <button
+                        className={classes.submitButton}
+                        type="button"
+                        onClick={handleDeleteClick}
+                    >
+                        Delete Faction
+                    </button>
+                </div>
             </form>
 
             <dialog ref={dialogRef}>

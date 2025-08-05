@@ -9,10 +9,12 @@ const LandingPage = () => {
     };
 
     return (
-        <div className={classes.overlay}>
-            <button onClick={handleEnter} className={classes.button}>
-                Enter Page
-            </button>
+        <div className={classes.overlayContainer}>
+            <div className={classes.overlay}>
+                <button onClick={handleEnter} className={classes.button}>
+                    Enter Page
+                </button>
+            </div>
         </div>
     );
 };

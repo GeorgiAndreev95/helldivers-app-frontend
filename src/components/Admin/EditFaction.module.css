@@ -15,6 +15,7 @@
 .addFactionForm {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
@@ -59,14 +60,19 @@
     vertical-align: middle;
 }
 
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
 .submitButton {
-    padding: 8px 20px;
-    width: 120px;
+    padding: 8px 0;
+    min-width: 190px;
     border: 2px solid white;
     border-radius: 8px;
     color: white;
     background: rgba(17, 24, 39, 0.7);
-    font-size: 1.25rem;
+    font-size: 17px;
     transition: all 0.3s ease;
     transform: scale(1);
     cursor: pointer;
@@ -113,7 +119,7 @@ dialog button {
     margin-top: 20px;
     border: 2px solid black;
     border-radius: 8px;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 dialog button:first-of-type:hover {

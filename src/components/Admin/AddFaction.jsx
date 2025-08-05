@@ -31,7 +31,7 @@ const AddFaction = () => {
 
         if (token && file) {
             try {
-                await createFaction(factionName, description, file, token);
+                await createFaction(factionName, description, file);
                 dispatch(fetchFactions());
                 navigate("/admin");
             } catch (error) {

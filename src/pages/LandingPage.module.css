@@ -1,3 +1,9 @@
+.overlayContainer {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+}
+
 .overlay {
     position: relative;
     z-index: 10;
