@@ -11,15 +11,24 @@ const Login = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMsg, setErrorMsg] = useState();
     const token = useSelector((state) => state.auth.token);
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
 
-        const token = await authentication(email, password);
-        dispatch(setToken(token));
-        localStorage.setItem("userToken", token);
-        navigate("/home");
+        try {
+            const token = await authentication(email, password);
+            dispatch(setToken(token));
+            localStorage.setItem("userToken", token);
+            navigate("/home");
+        } catch (error) {
+            const errorMsg = error.response.data.errors
+                ? error.response.data.errors[0].msg
+                : error.response.data.message;
+            setErrorMsg(errorMsg);
+            console.log(error);
+        }
     };
 
     const onEmailChangeHandler = (event) => {
@@ -37,6 +46,7 @@ const Login = () => {
 
     return (
         <div className={classes.loginContainer}>
+            {errorMsg && <p className={classes.errorMessage}>{errorMsg}</p>}
             <form className={classes.loginForm} onSubmit={onSubmitHandler}>
                 <input
                     className={classes.loginEmail}

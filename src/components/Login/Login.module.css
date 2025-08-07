@@ -1,8 +1,19 @@
 .loginContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 500px;
     align-items: center;
+}
+
+.errorMessage {
+    position: absolute;
+    top: 150px;
+    color: red;
+    background: rgb(255, 201, 201);
+    padding: 10px 20px;
+    border: 2px solid red;
+    border-radius: 10px;
 }
 
 .loginForm {
