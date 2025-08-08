@@ -1,4 +1,4 @@
-.loginContainer {
+.signupContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +16,17 @@
     border-radius: 10px;
 }
 
-.loginForm {
+.successMessage {
+    position: absolute;
+    top: 150px;
+    color: rgb(0, 167, 0);
+    background: rgb(214, 255, 201);
+    padding: 10px 20px;
+    border: 2px solid rgb(0, 167, 0);
+    border-radius: 10px;
+}
+
+.signupForm {
     width: 500px;
     height: 500px;
     display: flex;
@@ -27,19 +37,20 @@
     border-radius: 8px;
 }
 
-.loginForm > h1 {
+.signupForm > h1 {
     color: white;
+    margin-top: 50px;
 }
 
-.loginEmail,
-.loginPassword {
+.signupEmail,
+.signupPassword {
     width: 350px;
     border: none;
     border-radius: 10px;
     padding: 5px 15px;
 }
 
-.loginButton {
+.signupButton {
     padding: 8px 20px;
     border: 2px solid white;
     border-radius: 8px;
@@ -51,7 +62,7 @@
     cursor: pointer;
 }
 
-.loginButton:hover {
+.signupButton:hover {
     color: rgba(17, 24, 39, 0.9);
     background: white;
     border: 2px solid var(--main-yellow);

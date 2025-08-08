@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { AnimatePresence, motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
-import { setToken, setRole } from "../../slices/authSlice";
-import { authentication } from "../../services/authenticationService";
-import classes from "./Login.module.css";
+import { signup } from "../../services/authenticationService";
+import classes from "./Signup.module.css";
 
-const Login = () => {
+const Signup = () => {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
+    const [successMsg, setSuccessMsg] = useState("");
     const token = useSelector((state) => state.auth.token);
 
     const transition = {
@@ -35,16 +35,26 @@ const Login = () => {
         }
     }, [navigate, token]);
 
+    const onEmailChangeHandler = (event) => setEmail(event.target.value);
+    const onPasswordChangeHandler = (event) => setPassword(event.target.value);
+    const onConfirmPasswordChangeHandler = (event) =>
+        setConfirmPassword(event.target.value);
+
     const onSubmitHandler = async (e) => {
         e.preventDefault();
+        setErrorMsg("");
+        setSuccessMsg("");
 
         try {
-            const user = await authentication(email, password);
-            dispatch(setToken(user.token));
-            dispatch(setRole(user.role));
-            localStorage.setItem("userToken", user.token);
-            localStorage.setItem("userRole", user.role);
-            navigate("/home");
+            await signup(email, password, confirmPassword);
+
+            setSuccessMsg(
+                "Account created successfully! Redirecting to login..."
+            );
+
+            setTimeout(() => {
+                navigate("/login");
+            }, 3000);
         } catch (error) {
             const errorMsg = error.response.data.errors
                 ? error.response.data.errors[0].msg
@@ -54,12 +64,9 @@ const Login = () => {
         }
     };
 
-    const onEmailChangeHandler = (event) => setEmail(event.target.value);
-    const onPasswordChangeHandler = (event) => setPassword(event.target.value);
-
     return (
-        <div className={classes.loginContainer}>
-            <AnimatePresence>
+        <div className={classes.signupContainer}>
+            <AnimatePresence initial={false} exitBeforeEnter>
                 {errorMsg && (
                     <motion.p
                         key="error-msg"
@@ -72,12 +79,23 @@ const Login = () => {
                         {errorMsg}
                     </motion.p>
                 )}
+                {successMsg && (
+                    <motion.p
+                        key="success-msg"
+                        className={classes.successMessage}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={transition}
+                    >
+                        {successMsg}
+                    </motion.p>
+                )}
             </AnimatePresence>
 
-            <form className={classes.loginForm} onSubmit={onSubmitHandler}>
-                <h1>Log in</h1>
+            <form className={classes.signupForm} onSubmit={onSubmitHandler}>
+                <h1>Sign up</h1>
                 <input
-                    className={classes.loginEmail}
+                    className={classes.signupEmail}
                     name="email"
                     type="email"
                     required
@@ -87,7 +105,7 @@ const Login = () => {
                     autoComplete="username"
                 />
                 <input
-                    className={classes.loginPassword}
+                    className={classes.signupPassword}
                     name="password"
                     type="password"
                     required
@@ -96,12 +114,22 @@ const Login = () => {
                     onChange={onPasswordChangeHandler}
                     autoComplete="current-password"
                 />
-                <button className={classes.loginButton} type="submit">
-                    Log in
+                <input
+                    className={classes.signupPassword}
+                    name="confirmPassword"
+                    type="password"
+                    required
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={onConfirmPasswordChangeHandler}
+                    autoComplete="off"
+                />
+                <button className={classes.signupButton} type="submit">
+                    Create Account
                 </button>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default Signup;

@@ -10,6 +10,7 @@ import AddFaction from "./components/Admin/AddFaction";
 import ProtectedRoutes from "./components/Admin/ProtectedRoutes";
 import ViewFactions from "./components/Admin/ViewFactions";
 import EditFaction from "./components/Admin/EditFaction";
+import Signup from "./components/Login/Signup";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="home" element={<Home />} />
                 <Route path="factions" element={<Factions />} />
+                <Route path="signup" element={<Signup />} />
                 <Route path="login" element={<Login />} />
                 <Route element={<ProtectedRoutes />}>
                     <Route path="admin" element={<AdminPage />} />

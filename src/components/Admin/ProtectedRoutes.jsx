@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 
 const ProtectedRoutes = () => {
     const token = useSelector((state) => state.auth.token);
+    const role = useSelector((state) => state.auth.role);
 
-    return token ? <Outlet /> : <Navigate to="/login" />;
+    return token && role === "admin" ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

@@ -8,10 +8,12 @@ import { setToken } from "../../slices/authSlice";
 function Header() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const role = useSelector((state) => state.auth.role);
 
     const logoutHandler = () => {
         dispatch(setToken(null));
         localStorage.removeItem("userToken");
+        localStorage.removeItem("userRole");
 
         navigate("/login");
     };
@@ -30,12 +32,14 @@ function Header() {
                 </nav>
                 {!token ? (
                     <nav className={classes.categories}>
-                        <NavLink>Create Account</NavLink>
-                        <NavLink to="/login">Login</NavLink>
+                        <NavLink to="/signup">Sign up</NavLink>
+                        <NavLink to="/login">Log in</NavLink>
                     </nav>
                 ) : (
                     <nav className={classes.categories}>
-                        <NavLink to="/admin">Admin Page</NavLink>
+                        {role === "admin" && (
+                            <NavLink to="/admin">Admin Page</NavLink>
+                        )}
                         <a onClick={logoutHandler}>Log out</a>
                     </nav>
                 )}
