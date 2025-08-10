@@ -1,16 +1,16 @@
 import { Routes, Route } from "react-router";
 
-import Layout from "./components/Loadout/Layout";
+import Layout from "./components/Layout/Layout";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import Factions from "./pages/Factions";
 import Login from "./components/Login/Login";
-import AdminPage from "./components/Admin/AdminPage";
-import AddFaction from "./components/Admin/AddFaction";
+import AdminPage from "./components/Admin/AdminPage/AdminPage";
+import AddFaction from "./components/Admin/AddFaction/AddFaction";
 import ProtectedRoutes from "./components/Admin/ProtectedRoutes";
-import ViewFactions from "./components/Admin/ViewFactions";
-import EditFaction from "./components/Admin/EditFaction";
-import Signup from "./components/Login/Signup";
+import ViewFactions from "./components/Admin/ViewFactions/ViewFactions";
+import EditFaction from "./components/Admin/EditFaction/EditFaction";
+import Signup from "./components/Signup/Signup";
 
 function App() {
     return (

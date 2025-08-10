@@ -7,7 +7,7 @@
     animation: fadeIn 0.6s ease-in-out;
 }
 
-.addFactionContainer h1 {
+.addFactionContainer > h1 {
     color: var(--main-yellow);
     margin-bottom: 50px;
 }

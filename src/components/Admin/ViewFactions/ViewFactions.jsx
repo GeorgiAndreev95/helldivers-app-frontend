@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 
 import classes from "./ViewFactions.module.css";
-import { fetchFactions } from "../../slices/factionsSlice";
+import { fetchFactions } from "../../../slices/factionsSlice";
 
 function ViewFactions() {
     const dispatch = useDispatch();

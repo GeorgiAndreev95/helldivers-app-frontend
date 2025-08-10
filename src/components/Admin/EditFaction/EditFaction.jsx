@@ -7,8 +7,8 @@ import {
     deleteFaction,
     editFaction,
     getFaction,
-} from "../../services/factionService";
-import { fetchFactions } from "../../slices/factionsSlice";
+} from "../../../services/factionService";
+import { fetchFactions } from "../../../slices/factionsSlice";
 
 const EditFaction = () => {
     const dispatch = useDispatch();

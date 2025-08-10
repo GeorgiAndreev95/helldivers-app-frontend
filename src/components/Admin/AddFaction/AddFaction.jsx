@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 import classes from "./AddFaction.module.css";
-import { createFaction } from "../../services/factionService";
-import { fetchFactions } from "../../slices/factionsSlice";
+import { createFaction } from "../../../services/factionService";
+import { fetchFactions } from "../../../slices/factionsSlice";
 
 const AddFaction = () => {
     const dispatch = useDispatch();
@@ -15,8 +15,8 @@ const AddFaction = () => {
     const [fileName, setFileName] = useState("No file chosen");
     const token = useSelector((state) => state.auth.token);
 
-    const handleFileChange = (e) => {
-        const selectedFile = e.target.files[0];
+    const handleFileChange = (event) => {
+        const selectedFile = event.target.files[0];
         if (selectedFile) {
             setFileName(selectedFile.name);
             setFile(selectedFile);
@@ -26,8 +26,8 @@ const AddFaction = () => {
         }
     };
 
-    const onSubmitHandler = async (e) => {
-        e.preventDefault();
+    const onSubmitHandler = async (event) => {
+        event.preventDefault();
 
         if (token && file) {
             try {
