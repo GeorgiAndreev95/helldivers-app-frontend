@@ -31,7 +31,8 @@ export const createEnemyUnit = async (
     damage,
     minimumDifficulty,
     armor,
-    image
+    image,
+    factionId
 ) => {
     try {
         const formData = new FormData();
@@ -43,6 +44,7 @@ export const createEnemyUnit = async (
         formData.append("damage", damage);
         formData.append("minimumDifficulty", minimumDifficulty);
         formData.append("armor", armor);
+        formData.append("factionId", factionId);
         formData.append("image", image);
 
         const { data } = await axiosInstance.post("/enemy-unit", formData);
@@ -65,7 +67,8 @@ export const editEnemyUnit = async (
     damage,
     minimumDifficulty,
     armor,
-    image
+    image,
+    factionId
 ) => {
     try {
         const formData = new FormData();
@@ -77,6 +80,7 @@ export const editEnemyUnit = async (
         formData.append("damage", damage);
         formData.append("minimumDifficulty", minimumDifficulty);
         formData.append("armor", armor);
+        formData.append("factionId", factionId);
         if (image) {
             formData.append("image", image);
         }

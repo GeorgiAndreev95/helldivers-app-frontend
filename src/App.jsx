@@ -11,6 +11,7 @@ import ProtectedRoutes from "./components/Admin/ProtectedRoutes";
 import ViewFactions from "./components/Admin/ViewFactions/ViewFactions";
 import EditFaction from "./components/Admin/EditFaction/EditFaction";
 import Signup from "./components/Signup/Signup";
+import AddEnemyUnit from "./components/Admin/AddEnemyUnit/AddEnemyUnit";
 
 function App() {
     return (
@@ -28,6 +29,10 @@ function App() {
                     <Route
                         path="admin/edit-faction/:id"
                         element={<EditFaction />}
+                    />
+                    <Route
+                        path="admin/add-enemy-unit"
+                        element={<AddEnemyUnit />}
                     />
                 </Route>
             </Route>

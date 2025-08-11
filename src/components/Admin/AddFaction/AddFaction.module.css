@@ -57,6 +57,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;
+    color: black;
+    font-size: 0.95rem;
+    word-break: break-all;
 }
 
 .submitButton {
@@ -86,12 +89,6 @@
 .customFileButton:focus,
 .factionDescription:focus {
     background-color: rgb(221, 221, 221);
-}
-
-.fileName {
-    color: black;
-    font-size: 0.95rem;
-    word-break: break-all;
 }
 
 @keyframes fadeIn {

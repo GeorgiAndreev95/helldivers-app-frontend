@@ -14,7 +14,7 @@ const AdminPage = () => {
                 <Link to="factions">View/Edit/Delete Factions</Link>
             </nav>
             <nav className={classes.adminOptions}>
-                <Link>Add Enemy Unit</Link>
+                <Link to="add-enemy-unit">Add Enemy Unit</Link>
                 <Link>View/Edit/Delete Enemy Units</Link>
             </nav>
         </div>
