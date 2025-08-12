@@ -22,9 +22,9 @@ function ViewFactions() {
 
     return (
         <div className={classes.viewFactionsContainer}>
-            <h3 className={classes.viewFactionsClassTitle}>
+            <h1 className={classes.viewFactionsClassTitle}>
                 View/Edit/Delete Factions
-            </h3>
+            </h1>
 
             {factions.map((faction) => (
                 <div key={faction.id} className={classes.viewFactionContainer}>

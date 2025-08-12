@@ -11,6 +11,7 @@
 .viewFactionsClassTitle {
     text-align: center;
     font-size: 40px;
+    color: var(--main-yellow);
 }
 
 .viewFactionContainer {
@@ -55,4 +56,13 @@
 
 .viewFactionsButtons a:last-of-type {
     margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

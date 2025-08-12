@@ -1,0 +1,97 @@
+.viewEnemyUnitsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.25rem;
+    margin: 0 40px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.viewEnemyUnitsTitle {
+    text-align: center;
+    font-size: 40px;
+    color: var(--main-yellow);
+}
+
+.viewEnemyUnitContainer {
+    display: flex;
+    width: 90vw;
+    min-height: 180px;
+    align-items: flex-start;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: #222;
+}
+
+.viewEnemyUnitImgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    height: 150px;
+    min-width: 150px;
+    border: 2px solid var(--main-yellow);
+    border-radius: 10px;
+}
+
+.viewEnemyUnitImg {
+    height: 125px;
+    width: auto;
+}
+
+.viewEnemyUnitInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 5px;
+    min-height: 150px;
+    width: 90%;
+}
+
+.viewEnemyUnitName {
+    color: var(--main-yellow);
+}
+
+.viewEnemyUnitDescription {
+    font-size: 17px;
+}
+
+.viewEnemyUnitStatsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.viewEnemyUnitStats {
+    display: flex;
+    gap: 10px;
+}
+
+.viewFactionsButtons a {
+    width: 220px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    background: gray;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .viewEnemyUnitContainer {
+        width: 60vw;
+    }
+}

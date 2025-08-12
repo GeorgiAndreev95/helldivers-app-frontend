@@ -162,6 +162,7 @@ const AddEnemyUnit = () => {
                         id="difficultyOptions"
                         value={difficulty}
                         onChange={onDifficultyChangeHandler}
+                        required
                     >
                         <option value="">--Select--</option>
                         <option value="trivial">Trivial (1)</option>
@@ -186,6 +187,7 @@ const AddEnemyUnit = () => {
                         id="armorOptions"
                         value={armor}
                         onChange={onArmorChangeHandler}
+                        required
                     >
                         <option value="">--Select--</option>
                         <option value="unarmored">Unarmored</option>
@@ -201,6 +203,7 @@ const AddEnemyUnit = () => {
                         id="factionOptions"
                         value={selectedFaction}
                         onChange={onFactionChangeHandler}
+                        required
                     >
                         <option value="">--Select--</option>
                         {factions.map((faction) => (

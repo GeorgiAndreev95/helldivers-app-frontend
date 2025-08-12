@@ -36,6 +36,10 @@
     font-weight: bold;
 }
 
+a {
+    font-family: "Orbitron", sans-serif;
+}
+
 a:hover {
     font-weight: bold;
     color: var(--main-yellow);

@@ -13,7 +13,7 @@ export const getEnemyUnits = async () => {
 
 export const getEnemyUnit = async (id) => {
     try {
-        const { data } = await axiosInstance.get(`/enemy-unit/${id}`);
+        const { data } = await axiosInstance.get(`/enemy-units/${id}`);
 
         return data;
     } catch (error) {
@@ -47,7 +47,7 @@ export const createEnemyUnit = async (
         formData.append("factionId", factionId);
         formData.append("image", image);
 
-        const { data } = await axiosInstance.post("/enemy-unit", formData);
+        const { data } = await axiosInstance.post("/enemy-units", formData);
 
         console.log(data);
         return data;
@@ -85,7 +85,10 @@ export const editEnemyUnit = async (
             formData.append("image", image);
         }
 
-        const { data } = await axiosInstance.put(`/enemy-unit/${id}`, formData);
+        const { data } = await axiosInstance.put(
+            `/enemy-units/${id}`,
+            formData
+        );
 
         return data;
     } catch (error) {
@@ -96,7 +99,7 @@ export const editEnemyUnit = async (
 
 export const deleteEnemyUnit = async (id) => {
     try {
-        const response = await axiosInstance.delete(`/enemy-unit/${id}`);
+        const response = await axiosInstance.delete(`/enemy-units/${id}`);
 
         console.log(response);
     } catch (error) {
