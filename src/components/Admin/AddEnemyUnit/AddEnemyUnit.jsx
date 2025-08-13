@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 import { createEnemyUnit } from "../../../services/enemyUnitService";
+import { fetchEnemyUnits } from "../../../slices/enemyUnitSlice";
 import { fetchFactions } from "../../../slices/factionsSlice";
 import classes from "./AddEnemyUnit.module.css";
 
@@ -68,9 +69,10 @@ const AddEnemyUnit = () => {
                     file,
                     selectedFaction
                 );
-                navigate("/admin");
+                dispatch(fetchEnemyUnits());
+                navigate("/admin/enemy-units");
             } catch (error) {
-                console.error("Error creating faction:", error);
+                console.error("Error creating enemy unit:", error);
             }
         }
     };

@@ -1,0 +1,122 @@
+.addEnemyUnitContainer {
+    margin: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.addEnemyUnitContainer > h1 {
+    color: var(--main-yellow);
+    margin-bottom: 50px;
+}
+
+.addEnemyUnitForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.unitInputField,
+.unitTextareaField {
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.unitTextareaField {
+    height: 120px;
+}
+
+.hiddenFileUpload {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.customFileButton {
+    padding: 5px 15px;
+    height: 40px;
+    width: 350px;
+    align-content: center;
+    background: white;
+    color: gray;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.fileName {
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    color: black;
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.difficultyOptions {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.difficultyOptions > select {
+    color: gray;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.submitButton {
+    padding: 8px 20px;
+    width: 210px;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    background: rgba(17, 24, 39, 0.7);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    color: rgba(17, 24, 39, 0.9);
+    background: white;
+    border: 2px solid var(--main-yellow);
+    box-shadow: 0px 0px 3px 3px #ffcc00af;
+    transform: scale(1.03);
+}
+
+.unitInputField:hover,
+.unitTextareaField:hover,
+.customFileButton:hover,
+.unitInputField:focus,
+.unitTextareaField:focus,
+.customFileButton:focus {
+    background-color: rgb(221, 221, 221);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

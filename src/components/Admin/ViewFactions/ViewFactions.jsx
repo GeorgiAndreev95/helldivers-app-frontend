@@ -39,7 +39,11 @@ function ViewFactions() {
                         </p>
                     </div>
                     <div className={classes.viewFactionsButtons}>
-                        <Link>Faction Units</Link>
+                        <Link
+                            to={`/admin/enemy-units/${faction.name.toLowerCase()}`}
+                        >
+                            Faction Units
+                        </Link>
                         <Link to={`/admin/edit-faction/${faction.id}`}>
                             Edit/Delete Faction
                         </Link>

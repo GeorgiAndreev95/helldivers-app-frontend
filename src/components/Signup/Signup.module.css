@@ -58,7 +58,6 @@
     background: rgba(17, 24, 39, 0.7);
     font-size: 1.25rem;
     transition: all 0.3s ease;
-    transform: scale(1);
     cursor: pointer;
 }
 

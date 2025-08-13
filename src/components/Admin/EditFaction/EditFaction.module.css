@@ -74,7 +74,6 @@
     background: rgba(17, 24, 39, 0.7);
     font-size: 17px;
     transition: all 0.3s ease;
-    transform: scale(1);
     cursor: pointer;
 }
 
@@ -83,6 +82,7 @@
     background: white;
     border: 2px solid var(--main-yellow);
     box-shadow: 0px 0px 3px 3px #ffcc00af;
+    transform: scale(1.03);
 }
 
 .factionName:hover,

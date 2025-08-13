@@ -12,7 +12,7 @@ import ViewFactions from "./components/Admin/ViewFactions/ViewFactions";
 import EditFaction from "./components/Admin/EditFaction/EditFaction";
 import Signup from "./components/Signup/Signup";
 import AddEnemyUnit from "./components/Admin/AddEnemyUnit/AddEnemyUnit";
-// import EditEnemyUnit from "./components/Admin/EditEnemyUnit/EditEnemyUnit";
+import EditEnemyUnit from "./components/Admin/EditEnemyUnit/EditEnemyUnit";
 import ViewEnemyUnits from "./components/Admin/ViewEnemyUnits/ViewEnemyUnits";
 
 function App() {
@@ -40,10 +40,14 @@ function App() {
                         path="admin/enemy-units"
                         element={<ViewEnemyUnits />}
                     />
-                    {/* <Route
+                    <Route
+                        path="admin/enemy-units/:faction"
+                        element={<ViewEnemyUnits />}
+                    />
+                    <Route
                         path="admin/edit-enemy-unit/:id"
                         element={<EditEnemyUnit />}
-                    /> */}
+                    />
                 </Route>
             </Route>
         </Routes>
