@@ -32,3 +32,19 @@
     width: 100px;
     height: auto;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1400px) {
+    .factionContainer {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}

@@ -66,6 +66,7 @@ const EditFaction = () => {
     const onNameChangeHandler = (event) => setFactionName(event.target.value);
     const onDescriptionChangeHandler = (event) =>
         setDescription(event.target.value);
+
     const handleDeleteClick = () => {
         dialogRef.current?.showModal();
     };
