@@ -34,14 +34,70 @@ This project combines modern frontend technologies with the satirical, militaris
 
 **Landing Page**
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/caadcb54-7b4e-467a-ae8a-1d55b3e279f1" alt="Landing Page" />
+</div> 
+
+<br/>
+<br/>
+
 **Homepage**
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/56a06846-16e1-4fca-a34f-11f334ba08ad" alt="Homepage" />
+</div> 
+
+<br/>
+<br/>
 
 **Factions Page**
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/acd9609b-8da9-4f14-8fe4-23cb622fced2" alt="Factions page" />
+</div> 
+
+<br/>
+<br/>
+
 **Admin Page**
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/19ee2c5b-2d76-418c-a6c0-eba847893191" alt="Admin page" />
+</div> 
+
+<br/>
+<br/>
 
 **Add Faction / Add Enemy Unit Page**
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b4d2e7fe-d2ba-4c03-8184-2a8afe2c7077" alt="Add factions page" />
+</div> 
+
+<br/>
+<br/>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/085cdbca-ed88-47d5-b24a-62f0222b4456" alt="Add enemy units page" />
+</div> 
+
+<br/>
+<br/>
+
 **View/Edit/Delete Factions page**
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/53381ffe-4368-44ff-aeb3-545cf9bb2e95" alt="View/edit/delete factions page" />
+</div> 
+
+<br/>
+<br/>
+
 **View/Edit/Delete Enemy Units page**
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4a71dca1-752f-4206-90ce-78cfb80c327c" alt="View/edit/delete enemy units page" />
+</div> 
+
+<br/>
+<br/>
