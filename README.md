@@ -1,4 +1,4 @@
-# Helldivers 2 App – Frontend
+# 🎖️ Helldivers 2 App – Frontend
 
 An interactive web application inspired by Helldivers 2, built to serve as the frontend for a custom backend.
 The app provides a hub where users can explore intel on enemy factions, units, weapons, and stratagems, while admins can securely add and manage entries.
@@ -37,8 +37,6 @@ This project combines modern frontend technologies with the satirical, militaris
 **Homepage**
 
 **Factions Page**
-
-**Log in/Sign up Page**
 
 **Admin Page**
 
