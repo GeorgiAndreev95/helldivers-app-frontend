@@ -1,10 +1,7 @@
 .viewFactionsContainer {
     display: flex;
     flex-direction: column;
-    justify-self: center;
     color: white;
-    font-size: 1.25rem;
-    margin: 0 40px;
     animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -28,7 +25,8 @@
 }
 
 .viewFactionName {
-    width: 120px;
+    min-width: 230px;
+    font-size: 20px;
     text-align: center;
 }
 
